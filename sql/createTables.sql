@@ -1,42 +1,22 @@
---
--- Structure de la table `categories`
---
-CREATE TABLE `categories` (
+
+  -- Structure de la table `commandes`
+
+
+CREATE TABLE `commandes` (
   `id` int(11) NOT NULL,
-  `label` varchar(255) NOT NULL
+  `date` date NOT NULL,
+  `produits_id` int(11) NOT NULL,
+  `clients_id` int(11) NOT NULL
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Index pour la table `categories`
---
-ALTER TABLE `categories`
-  ADD PRIMARY KEY (`id`);
+-- Index pour la table `commandes`
+ALTER TABLE `commandes`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `produits_id` (`produits_id`),
+  ADD KEY `clients_id` (`clients_id`);
 
---
--- AUTO_INCREMENT pour la table `categories`
---
-ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  -- AUTO_INCREMENT pour la table `commandes`
 
---
--- Structure de la table `clients`
---
-CREATE TABLE `clients` (
-  `Id` int(11) NOT NULL,
-  `pseudo` varchar(255) NOT NULL,
-  `passe` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Index pour la table `clients`
---
-ALTER TABLE `clients`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `Id` (`Id`);
-
-  --
--- AUTO_INCREMENT pour la table `clients`
---
-ALTER TABLE `clients`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `commandes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
