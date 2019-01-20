@@ -12,7 +12,7 @@ if(isset($_POST["Login"]) AND isset($_POST["MdP"]) AND isset($_POST["eMail"]) ){
 
     // Insertion
       try{
-$DB = new PDO('mysql:host=localhost;dbname=e_commerce; charset=utf8','root', 'karima1684');
+$DB = new PDO('mysql:host=localhost;dbname=e_commerce; charset=utf8','****', '****');
 
 
 
